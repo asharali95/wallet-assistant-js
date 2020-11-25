@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width:100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.signupFormArea{
+    background-color: lightcyan;
+}
+.signinFormArea{
+    background: lightgreen;
+}
