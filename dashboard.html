@@ -7,7 +7,37 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Dashboard</h1>
+    <!-- <h1>Dashboard</h1> -->
+    <div class="container">
+      <div class="navbar">
+        <div class="logo flex"><h3>Logo</h3></div>
+        <div class="amount flex"><h3></h3></div>
+        <div class="name flex"><h3></h3></div>
+    </div>
+      <div class="transactionForm flex"> transaction Form</div>
+      <div class="transactionList flex">transactionList</div>
+    </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use -->
+<script  src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+<script  src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAyCf5dPSngiJEv-LWbeneh2LsikY55tV4",
+    authDomain: "wallet-tracker-js-55711.firebaseapp.com",
+    databaseURL: "https://wallet-tracker-js-55711.firebaseio.com",
+    projectId: "wallet-tracker-js-55711",
+    storageBucket: "wallet-tracker-js-55711.appspot.com",
+    messagingSenderId: "223016431081",
+    appId: "1:223016431081:web:6dda06f40936b43a54af78"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
     <script src="./js/dashboard.js"></script>
 </body>
 </html>

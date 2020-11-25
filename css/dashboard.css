@@ -3,3 +3,29 @@
     margin: 0;
     border: 0;
 }
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: grid;
+    grid-template-rows: 10vh 15vh minmax(75vh,min-content) ;
+}
+.navbar{
+    background-color: lightgreen;
+    display: grid;
+    grid-template-columns: min-content 1fr max-content;
+}
+.transactionForm{
+    background-color: rgb(228, 228, 228);
+}
+.transactionList{
+    background-color: lightblue;
+}
+.logo h3{
+    padding-left: 5px;
+}
+.name h3{
+    padding-right: 5px;
+}
