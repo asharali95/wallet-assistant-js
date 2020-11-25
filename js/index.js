@@ -1,11 +1,43 @@
 var auth = firebase.auth()
 var firestore = firebase.firestore()
-
 var signinForm = document.querySelector(".signinForm");
 var signupForm = document.querySelector(".signupForm");
+var googleSignupButton = document.querySelector(".googleSignup");
+
+// console.log(googleSignupButton)
 // console.log(signinForm)
 // console.log(signupForm)
 
+var googleSignin = async() =>{
+   try {
+    var googleProvider = new firebase.auth.GoogleAuthProvider();
+    var {additionalUserInfo:{isNewUser},user:{displayName,uid,email}}  = await auth.signInWithPopup(googleProvider)
+    // console.log(displayName,uid)
+    
+    //redirect
+    // "/dashboard.html#{uid}"
+
+   if(isNewUser){
+    var userInfo = {
+        fullName : displayName,
+        email,
+        createdAt: new Date()
+    }
+    await firestore.collection("Users").doc(uid).set(userInfo);
+    // console.log("done")
+    //redirect
+    location.assign(`./dashboard.html#${uid}`)
+   } 
+        
+   else{
+    //redirect
+    location.assign(`./dashboard.html#${uid}`)
+}
+ 
+   } catch (error) {
+    console.log(error)
+   }
+}
 var signinFormSubmission = async (e) => {
     e.preventDefault();
     // console.log("sign in")
@@ -20,7 +52,7 @@ var signinFormSubmission = async (e) => {
         // console.log(userInfo.data())
 
         //redirect
-        // "/dashboard.html#{uid}"
+        location.assign(`./dashboard.html#${uid}`)
         }
     } catch (error) {
         console.log(error)
@@ -48,13 +80,15 @@ var signupFormSubmission = async (e) => {
             console.log(userInfo)
             await firestore.collection("Users").doc(uid).set(userInfo)
             console.log("done")
-            //redirect to dashboard page
-           // "/dashboard.html#{uid}"
+        //redirect
+        location.assign(`./dashboard.html#${uid}`)
+        }
     }
-}   catch(error){
-    console.log(error)
-}
-}
+    catch(error){
+        console.log(error)
+    }
+}   
 
 signinForm.addEventListener("submit" ,(e)=>signinFormSubmission(e));
 signupForm.addEventListener("submit" ,(e)=>signupFormSubmission(e));
+googleSignupButton.addEventListener("click",googleSignin);
