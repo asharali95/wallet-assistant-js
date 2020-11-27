@@ -29,3 +29,13 @@
 .name h3{
     padding-right: 5px;
 }
+
+.transactionListItem {
+    display: grid;
+    grid-template-columns: min-content 1fr max-content max-content;
+    column-gap: 20px;
+}
+
+.listitem{
+    padding: 20px;
+}

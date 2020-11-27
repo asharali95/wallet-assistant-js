@@ -81,7 +81,7 @@ var signupFormSubmission = async (e) => {
             await firestore.collection("Users").doc(uid).set(userInfo)
             console.log("done")
         //redirect
-        location.assign(`./dashboard.html#${uid}`)
+        // location.assign(`./dashboard.html#${uid}`)
         }
     }
     catch(error){

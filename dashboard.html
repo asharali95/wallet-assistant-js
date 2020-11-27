@@ -12,10 +12,30 @@
       <div class="navbar">
         <div class="logo flex"><h3>Logo</h3></div>
         <div class="amount flex"><h3></h3></div>
-        <div class="name flex"><h3></h3></div>
+        <div class="name flex"><button class="signout-btn">signout</button><h3></h3></div>
+        
     </div>
-      <div class="transactionForm flex"> transaction Form</div>
-      <div class="transactionList flex">transactionList</div>
+      <div class="transactionForm flex"> 
+        <form class="transactionForm" id="abc">
+          <input type="text" placeholder="title" class="title">
+          <input type="text" placeholder="cost" class="cost">
+          <label>transaction type:</label><select class="transaction-type">
+            <option value="expense" selected="expense">Expense</option>
+            <option value="income">Income</option>
+          </select>
+          <label for="">transaction at: </label><input type="date" class="transactionAt">
+          <button type="submit">add to list</button>
+        </form></div>
+      <div class="transactionList">
+        <div class="transactionHeading transactionListItem listitem">
+          <h2>No.</h2>
+          <h2>Transaction Title</h2>
+          <h2>Transaction Cost</h2>
+          <h2>Transaction Date</h2>
+        </div>
+        <div class="transactionListItem"> </div>
+      </div>
+      
     </div>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
