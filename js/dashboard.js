@@ -21,6 +21,38 @@ var fetchUserInfo = async (uid)=>{
         console.log(error)
     }
 }
+var fetchTransaction =async (uid) =>{
+    try {
+        var transactions =[];
+        var query = await firestore.collection("transactions").where("transactBy","==",uid).orderBy("transactionAt","desc").get() //we have use orderBy and made index in firebase taa k descending me aye.
+        // console.log(query)
+        query.forEach((doc) =>{     // firebase ne forEach diya hua hai aur koi map ya filter waghera ni lgengy
+            // console.log({...doc.data(), transactionId: doc.id}) // humne yahan pe doc id bhi add kri hai taa k us specific transaction ki id fetch kr sakain
+            transactions.push({...doc.data(), transactionId: doc.id})
+        })
+        // console.log(transactions)
+        return transactions
+    
+    } catch (error) {
+        
+    }
+}
+var renderTransactions = (transactionArr) => {
+    // console.log(transactionArr)
+    transactionListItem.innerHTML = ""
+   transactionArr.forEach((transaction,index) => {
+    var {title,cost,transactionAt, transactionId} = transaction;
+       transactionListItem.insertAdjacentHTML("beforeend",
+       `
+       <div class="renderindex listitem"><h3>${++index}</h3></div>
+       <div class="renderTitle listitem"><h3>${title}</h3></div>
+       <div class="renderCost listitem"><h3>${cost}</h3> </div>
+       <div class="renderTractionAt listitem"><h3>${transactionAt.toDate().toISOString().split("T")[0]}</h3></div>
+       <div class= "renderViewBtn listitem"><a href ="./transaction.html#${transactionId}"><button type ="button">view</button></a> </div>
+
+       `)
+   })
+}
 var transactionFormSubmission = async (e) =>{
     try {
         e.preventDefault();
@@ -40,6 +72,10 @@ var transactionFormSubmission = async (e) =>{
       //   console.log(transactionInfo)
       await firestore.collection("transactions").add(transactionInfoObj)
       document.getElementById("abc").reset()
+        // re render transactions
+        var transactions = await fetchTransaction(uid);
+        // console.log(transactions)
+        renderTransactions(transactions)
     }
     // document.querySelector(".title").value=" "
     }
@@ -48,36 +84,6 @@ var transactionFormSubmission = async (e) =>{
       }
 }
 
-var renderTransactions = (transactionArr) => {
-   transactionArr.forEach((transaction,index) => {
-    var {title,cost,transactionAt} = transaction;
-       transactionListItem.insertAdjacentHTML("beforeend",
-       `
-       <div class="renderindex listitem"><h3>${++index}</h3></div>
-       <div class="renderTitle listitem"><h3>${title}</h3></div>
-       <div class="renderCost listitem"><h3>${cost}</h3> </div>
-       <div class="renderTractionAt listitem"><h3>${transactionAt.toDate().toISOString().split("T")[0]}</h3></div>
-
-       `)
-   })
-}
-
-var fetchTransaction =async (uid) =>{
-    try {
-        var transactions =[];
-        var query = await firestore.collection("transactions").where("transactBy","==",uid).get()
-        // console.log(query)
-        query.forEach((doc) =>{     // firebase ne forEach diya hua hai aur koi map ya filter waghera ni lgengy
-            // console.log({...doc.data(), transactionId: doc.id}) // humne yahan pe doc id bhi add kri hai taa k us specific transaction ki id fetch kr sakain
-            transactions.push({...doc.data(), transactionId: doc.id})
-        })
-        // console.log(transactions)
-        return transactions
-    
-    } catch (error) {
-        
-    }
-}
 signoutBtn.addEventListener("click",userSignout);
 transactionForm.addEventListener("submit",transactionFormSubmission)
 // fetchUserInfo(uid)
