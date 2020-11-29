@@ -11,8 +11,8 @@
     <div class="container">
       <div class="navbar">
         <div class="logo flex"><h3>Logo</h3></div>
-        <div class="amount flex"><h3></h3></div>
-        <div class="name flex"><button class="signout-btn">signout</button><h3></h3></div>
+        <div class="amount flex"><h2>0 Rs.</h2></div>
+        <div class="name flex"><h3></h3><button class="signout-btn">signout</button></div>
         
     </div>
       <div class="transactionForm flex"> 
@@ -24,16 +24,24 @@
             <option value="income">Income</option>
           </select>
           <label for="">transaction at: </label><input type="date" class="transactionAt">
-          <button type="submit">add to list</button>
-        </form></div>
-      <div class="transactionList">
-        <div class="transactionHeading listitem">
-          <h2>No.</h2>
-          <h2>Transaction Title</h2>
-          <h2>Transaction Cost</h2>
-          <h2>Transaction Date</h2>
+          <button type="submit" class="ButtonDesign">add to list</button>
+        </form>
+        <div class="BoxColors flex">
+          <div class="incomeColorBox"></div> <label>Income</label>
+         <div class="expenseColorBox"></div><label>expense</label>
         </div>
-        <div class="transactionListItem"> </div>
+      </div>
+      <div class="transactionList">
+        <div class="transactionHeading listitem ">
+          <h2 class="head">No.</h2>
+          <h2 class="head">Transaction Title</h2>
+          <h2 class="head">Transaction Cost</h2>
+          <h2 class="head">Transaction Date</h2>
+          <h2 class="head">Options</h2>
+        </div>
+        <div class="transactionListItem">
+          <div class="transactionListItemWrapper"></div>
+        </div>
       </div>
       
     </div>

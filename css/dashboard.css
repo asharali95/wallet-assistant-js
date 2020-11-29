@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .container{
     display: grid;
     grid-template-rows: 10vh 15vh minmax(75vh,min-content) ;
@@ -17,11 +18,17 @@
     display: grid;
     grid-template-columns: min-content 1fr max-content;
 }
+.name{
+    padding-right:10px;
+}
+.signout-btn{
+    margin-right: 5px;
+}
 .transactionForm{
     background-color: rgb(228, 228, 228);
 }
 .transactionList{
-    background-color: lightblue;
+    background-color: rgb(250, 251, 252);
 }
 .logo h3{
     padding-left: 5px;
@@ -31,16 +38,50 @@
 }
 .transactionHeading{
     display: grid;
-    grid-template-columns: min-content 1fr max-content max-content ;
+    grid-template-columns: min-content 1fr max-content min-content max-content;
     column-gap: 20px;
+    background-color: rgb(131, 173, 193);
 }
-.transactionListItem {
+.transactionListItemWrapper {
     display: grid;
     grid-template-columns: min-content 1fr max-content max-content min-content ;
     column-gap: 20px;
 }
-
-
+.ButtonDesign{
+    text-decoration: none;
+    padding: 2px 10px 2px 10px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.582);
+    font-weight: bold;
+}
 .listitem{
     padding: 20px;
+}
+.income{
+     background-color: rgb(204, 71, 71);
+}
+
+.expense{
+    background-color: rgb(255, 195, 106);
+}
+.BoxColors{
+    flex-flow: row;
+    transform: translateX(10px);
+}
+.incomeColorBox{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    background-color: rgb(204, 71, 71);
+}
+.expenseColorBox{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    background-color: rgb(255, 195, 106);
+}
+.divDesign{
+    border-radius: 10px;
+    margin: 5px;
+
 }

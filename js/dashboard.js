@@ -1,12 +1,55 @@
+/* overall code I did here:
+----------------------------
+ - fetch user transaction from firestore
+ - render page data
+    - render user info
+    - render user transaction
+ - add transaction via transaction form
+*/
+
+//global variables: 
+//---------------------------------
 var firestore = firebase.firestore()
 var auth = firebase.auth()
 var nameDiv = document.querySelector(".name h3");
 var signoutBtn = document.querySelector(".signout-btn")
 var transactionForm = document.querySelector(".transactionForm")
 var transactionListItem = document.querySelector(".transactionListItem")
-//fetching uid from url
-// var uid = location.hash.substring(1,location.hash.length)
-uid = null;
+var uid = null;
+//---------------------------------
+
+
+//render function
+
+//- render user info:
+// fetch user info from user id
+// display user info in navbar
+
+
+//- render transactions:
+//fetch user transactions
+// calculate current current amount on the basis of fetched transactions
+//display current amount on navbar
+// display transaction list
+
+var renderTransactions = (transactionArr) => {
+    //setting user current amount
+    finalCostCalculation(transactionArr)
+
+    transactionListItem.innerHTML = ""
+   transactionArr.forEach((transaction,index) => {
+    var {title,cost,transactionAt, transactionId, transactionType} = transaction;
+       transactionListItem.insertAdjacentHTML("beforeend",
+       `<div class='transactionListItemWrapper divDesign ${transactionType ==="income"?"income":"expense"}'>
+            <div class="renderindex listitem"><h3>${++index}</h3></div>
+            <div class="renderTitle listitem"><h3>${title}</h3></div>
+            <div class="renderCost listitem"><h3>${cost}</h3> </div>
+            <div class="renderTractionAt listitem"><h3>${transactionAt.toDate().toISOString().split("T")[0]}</h3></div>
+            <div class= "renderViewBtn listitem"><a href ="./transaction.html#${transactionId}"><button type ="button" class="ButtonDesign">Edit</button></a> </div>
+       </div>
+       `)
+   })
+}
 var userSignout =async () =>{
     await auth.signOut()
 }
@@ -20,6 +63,21 @@ var fetchUserInfo = async (uid)=>{
     } catch (error) {
         console.log(error)
     }
+}
+var finalCostCalculation = (transArr) =>{
+    var amount = document.querySelector(".amount h2");
+    var totalAmount = 0;
+    transArr.forEach((transaction) =>{
+        var {cost , transactionType} = transaction;
+        if(transactionType ==="income"){
+            totalAmount = totalAmount+cost
+        }
+        else{
+            totalAmount = totalAmount-cost
+        }
+    })
+    // console.log(totalAmount)
+    amount.textContent = `${totalAmount} Rs.`
 }
 var fetchTransaction =async (uid) =>{
     try {
@@ -37,22 +95,7 @@ var fetchTransaction =async (uid) =>{
         
     }
 }
-var renderTransactions = (transactionArr) => {
-    // console.log(transactionArr)
-    transactionListItem.innerHTML = ""
-   transactionArr.forEach((transaction,index) => {
-    var {title,cost,transactionAt, transactionId} = transaction;
-       transactionListItem.insertAdjacentHTML("beforeend",
-       `
-       <div class="renderindex listitem"><h3>${++index}</h3></div>
-       <div class="renderTitle listitem"><h3>${title}</h3></div>
-       <div class="renderCost listitem"><h3>${cost}</h3> </div>
-       <div class="renderTractionAt listitem"><h3>${transactionAt.toDate().toISOString().split("T")[0]}</h3></div>
-       <div class= "renderViewBtn listitem"><a href ="./transaction.html#${transactionId}"><button type ="button">view</button></a> </div>
 
-       `)
-   })
-}
 var transactionFormSubmission = async (e) =>{
     try {
         e.preventDefault();
@@ -64,7 +107,7 @@ var transactionFormSubmission = async (e) =>{
     if(title && cost && transactionType && transactionAt){
       var transactionInfoObj ={
           title,
-          cost,
+          cost: parseInt(cost),
           transactionType,
           transactionAt : new Date(transactionAt),
           transactBy : uid
@@ -90,35 +133,16 @@ transactionForm.addEventListener("submit",transactionFormSubmission)
 
 auth.onAuthStateChanged(async(user) =>{
     if(user){
-        // console.log(user)
-        // console.log("user logged in")
-        // var {uid} = user;
         uid = user.uid;
         var userInfo = await fetchUserInfo(uid)
-        // console.log(userInfo)
         nameDiv.textContent = userInfo.fullName;
         // render transactions
-        // 1. fetch user transactions
+        // fetch user transactions
       var transactions = await fetchTransaction(uid);
-    //   console.log(transactions)
-        // 2. render process
+        //  render process
         renderTransactions(transactions)
-        // var transactionArr =[{
-        //     title:"abc",
-        //     cost:"200",
-        //     transactiontType:"Expense",
-        //     transactionAt: "2020 - 11 - 20"
-        // },
-        // {
-        //     title:"xyz",
-        //     cost:"100",
-        //     transactiontType:"income",
-        //     transactionAt: "2020 - 11 - 20"
-        // }]
-        // renderTransactions(transactionArr)
     }
     else{
-        // console.log("user not out")
         location.assign("./index.html");
     }
 
