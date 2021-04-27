@@ -14,7 +14,7 @@
     grid-template-rows: 10vh 15vh minmax(75vh,min-content) ;
 }
 .navbar{
-    background-color: lightgreen;
+    background-color: rgb(255, 156, 117);
     display: grid;
     grid-template-columns: min-content 1fr max-content;
 }
@@ -22,10 +22,17 @@
     padding-right:10px;
 }
 .signout-btn{
-    margin-right: 5px;
+    margin-right: 10px;
+    background-color: rgb(240, 240, 240);
+    box-sizing: border-box;
+    padding: 4px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    
 }
 .transactionForm{
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(247, 247, 247);
 }
 .transactionList{
     background-color: rgb(250, 251, 252);
@@ -40,7 +47,7 @@
     display: grid;
     grid-template-columns: min-content 1fr max-content min-content max-content;
     column-gap: 20px;
-    background-color: rgb(131, 173, 193);
+    background-color: rgb(247, 247, 247);
 }
 .transactionListItemWrapper {
     display: grid;
@@ -58,11 +65,11 @@
     padding: 20px;
 }
 .income{
-     background-color: rgb(204, 71, 71);
+     background-color: rgb(255, 253, 125);
 }
 
 .expense{
-    background-color: rgb(255, 195, 106);
+    background-color: rgb(140, 175, 252);
 }
 .BoxColors{
     flex-flow: row;
@@ -72,13 +79,13 @@
     width: 20px;
     height: 20px;
     margin-left: 10px;
-    background-color: rgb(204, 71, 71);
+    background-color: rgb(255, 253, 125);
 }
 .expenseColorBox{
     width: 20px;
     height: 20px;
     margin-left: 10px;
-    background-color: rgb(255, 195, 106);
+    background-color: rgb(140, 175, 252);
 }
 .divDesign{
     border-radius: 10px;
