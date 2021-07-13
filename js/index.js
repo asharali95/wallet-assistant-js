@@ -48,8 +48,8 @@ var signupFormSubmission = async (e) => {
       };
 
       await firestore.collection("Users").doc(uid).set(userInfo);
-      console.log("sign up successful");
       signupForm.reset();
+      alert("sign up successful");
     }
   } catch (error) {
     console.log(error);
@@ -93,13 +93,13 @@ var googleSignin = async () => {
   try {
     var googleProvider = new firebase.auth.GoogleAuthProvider();
     googleProvider.setCustomParameters({
-        prompt: "select_account",
-      });
+      prompt: "select_account",
+    });
     var {
       additionalUserInfo: { isNewUser },
       user: { displayName, uid, email },
     } = await auth.signInWithPopup(googleProvider);
-    
+
     if (isNewUser) {
       var userInfo = {
         fullName: displayName,

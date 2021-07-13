@@ -1,22 +1,56 @@
-*{
-    padding: 0;
-    margin: 0;
-    border: 0;
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
-.flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.container{
-    width:100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: rgb(201, 201, 201);
 }
-.signupFormArea{
-    background-color: lightcyan;
+
+button {
+  width: 180px;
+  height: 50px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+  font-size: large;
+  color: #fff;
+  margin-bottom: 10px;
+  background-color: #0074b1;
+  border-radius: 5px;
 }
-.signinFormArea{
-    background: lightgreen;
+
+input {
+  width: 350px;
+  height: 50px;
+  font-size: 20px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.signupForm,
+.signinForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.signupForm > h1,
+.signinForm > h1 {
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.googleSignup {
+  background-color: tomato;
 }

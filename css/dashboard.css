@@ -1,94 +1,94 @@
-*{
-    padding: 0;
-    margin: 0;
-    border: 0;
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
-.flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.container{
-    display: grid;
-    grid-template-rows: 10vh 15vh minmax(75vh,min-content) ;
+button {
+  cursor: pointer;
 }
-.navbar{
-    background-color: rgb(255, 156, 117);
-    display: grid;
-    grid-template-columns: min-content 1fr max-content;
+.container {
+  display: grid;
+  grid-template-rows: 10vh 15vh minmax(75vh, min-content);
 }
-.name{
-    padding-right:10px;
+.navbar {
+  background-color: rgb(255, 156, 117);
+  display: grid;
+  grid-template-columns: min-content 1fr max-content;
 }
-.signout-btn{
-    margin-right: 10px;
-    background-color: rgb(240, 240, 240);
-    box-sizing: border-box;
-    padding: 4px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    border-radius: 5px;
-    
+.name {
+  padding-right: 10px;
 }
-.transactionForm{
-    background-color: rgb(247, 247, 247);
+.signout-btn {
+  margin-right: 10px;
+  background-color: rgb(240, 240, 240);
+  box-sizing: border-box;
+  padding: 4px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  border-radius: 5px;
 }
-.transactionList{
-    background-color: rgb(250, 251, 252);
+.transactionForm {
+  background-color: rgb(247, 247, 247);
 }
-.logo h3{
-    padding-left: 5px;
+.transactionList {
+  background-color: rgb(250, 251, 252);
 }
-.name h3{
-    padding-right: 5px;
+.logo h3 {
+  padding-left: 5px;
 }
-.transactionHeading{
-    display: grid;
-    grid-template-columns: min-content 1fr max-content min-content max-content;
-    column-gap: 20px;
-    background-color: rgb(247, 247, 247);
+.name h3 {
+  padding-right: 5px;
+}
+.transactionHeading {
+  display: grid;
+  grid-template-columns: min-content 1fr max-content min-content max-content;
+  column-gap: 20px;
+  background-color: rgb(247, 247, 247);
 }
 .transactionListItemWrapper {
-    display: grid;
-    grid-template-columns: min-content 1fr max-content max-content min-content ;
-    column-gap: 20px;
+  display: grid;
+  grid-template-columns: min-content 1fr max-content max-content min-content;
+  column-gap: 20px;
 }
-.ButtonDesign{
-    text-decoration: none;
-    padding: 2px 10px 2px 10px;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.582);
-    font-weight: bold;
+.ButtonDesign {
+  text-decoration: none;
+  padding: 2px 10px 2px 10px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.582);
+  font-weight: bold;
 }
-.listitem{
-    padding: 20px;
+.listitem {
+  padding: 20px;
 }
-.income{
-     background-color: rgb(255, 253, 125);
+.income {
+  background-color: rgb(255, 253, 125);
 }
 
-.expense{
-    background-color: rgb(140, 175, 252);
+.expense {
+  background-color: rgb(140, 175, 252);
 }
-.BoxColors{
-    flex-flow: row;
-    transform: translateX(10px);
+.BoxColors {
+  flex-flow: row;
+  transform: translateX(10px);
 }
-.incomeColorBox{
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-    background-color: rgb(255, 253, 125);
+.incomeColorBox {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  background-color: rgb(255, 253, 125);
 }
-.expenseColorBox{
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-    background-color: rgb(140, 175, 252);
+.expenseColorBox {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  background-color: rgb(140, 175, 252);
 }
-.divDesign{
-    border-radius: 10px;
-    margin: 5px;
-
+.divDesign {
+  border-radius: 10px;
+  margin: 5px;
 }
