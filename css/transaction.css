@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+.transaction_container {
+  height: 90%;
+  flex-direction: column;
+}
+.transaction_header {
+  transform: translateY(-50%);
+  color: rgb(231, 64, 64);
+}
+input,
+select {
+  display: block;
+  padding: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.transactionForm {
+  padding: 30px;
+  background: whitesmoke;
+}
+.transactionForm > label {
+  font-size: 18px;
+}
+input[type="text"] {
+  padding: 10px;
+  border-bottom: 2px solid red;
+  background: none;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  padding: 10px 25px;
+  color: white;
+}
+.editbtn{
+  background: rgb(77, 123, 209);
+}
+.deleteBtn{
+  background: tomato;
+}

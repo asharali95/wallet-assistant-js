@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/dashboard.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
     <title>Dashboard</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- <h1>Dashboard</h1> -->
     <div class="container">
       <div class="navbar">
-        <div class="logo flex"><h3>Logo</h3></div>
+        <div class="logo flex"></div>
         <div class="amount flex"><h2>0 Rs.</h2></div>
-        <div class="name flex"><h3></h3><button class="signout-btn">signout</button></div>
-        
-    </div>
-      <div class="transactionForm flex"> 
+        <div class="name flex">
+          <h3></h3>
+          <button class="signout-btn">signout</button>
+        </div>
+      </div>
+      <div class="transactionForm flex">
         <form class="transactionForm" id="abc">
-          <input type="text" placeholder="title" class="title">
-          <input type="text" placeholder="cost" class="cost">
-          <label>transaction type:</label><select class="transaction-type">
+          <input type="text" placeholder="title" class="title" />
+          <input type="text" placeholder="cost" class="cost" />
+          <label>transaction type:</label
+          ><select class="transaction-type">
             <option value="expense" selected="expense">Expense</option>
             <option value="income">Income</option>
           </select>
-          <label for="">transaction at: </label><input type="date" class="transactionAt">
+          <label for="">transaction at: </label
+          ><input type="date" class="transactionAt" />
           <button type="submit" class="ButtonDesign">add to list</button>
         </form>
         <div class="BoxColors flex">
-          <div class="incomeColorBox"></div> <label>Income</label>
-         <div class="expenseColorBox"></div><label>expense</label>
+          <div class="incomeColorBox"></div>
+          <label>Income</label>
+          <div class="expenseColorBox"></div>
+          <label>expense</label>
         </div>
       </div>
       <div class="transactionList">
-        <div class="transactionHeading listitem ">
+        <div class="transactionHeading listitem">
           <h2 class="head">No.</h2>
           <h2 class="head">Transaction Title</h2>
           <h2 class="head">Transaction Cost</h2>
@@ -43,29 +49,28 @@
           <div class="transactionListItemWrapper"></div>
         </div>
       </div>
-      
     </div>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use -->
-<script  src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
-<script  src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAyCf5dPSngiJEv-LWbeneh2LsikY55tV4",
-    authDomain: "wallet-tracker-js-55711.firebaseapp.com",
-    databaseURL: "https://wallet-tracker-js-55711.firebaseio.com",
-    projectId: "wallet-tracker-js-55711",
-    storageBucket: "wallet-tracker-js-55711.appspot.com",
-    messagingSenderId: "223016431081",
-    appId: "1:223016431081:web:6dda06f40936b43a54af78"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAyCf5dPSngiJEv-LWbeneh2LsikY55tV4",
+        authDomain: "wallet-tracker-js-55711.firebaseapp.com",
+        databaseURL: "https://wallet-tracker-js-55711.firebaseio.com",
+        projectId: "wallet-tracker-js-55711",
+        storageBucket: "wallet-tracker-js-55711.appspot.com",
+        messagingSenderId: "223016431081",
+        appId: "1:223016431081:web:6dda06f40936b43a54af78",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
     <script src="./js/dashboard.js"></script>
-</body>
+  </body>
 </html>

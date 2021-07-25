@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Wallet Tracker</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Wallet Assistant</title>
+  </head>
+  <body>
     <div class="container">
-        <div class="signinFormArea flex">
-            <form class="signinForm">
-                <h1>Sign in </h1>
-                <input class="signinEmail" type="text" placeholder="Enter Email">
-                <input class="signinPassword" type="password" placeholder="Enter Password">
-                <button type="submit">submit</button>
-                <button class="googleSignup" type="button">Sign in with google</button>
-            </form>
-        </div>
-        <div class="signupFormArea flex">
-            <form class="signupForm">
-                <h1>Sign Up </h1>
-                <input class="signupFullName" type="text" placeholder="Enter Full Name">
-                <input class="signupEmail" type="text" placeholder="Enter Email">
-                <input class="signupPassword" type="password" placeholder="Enter Password">
-                <button type="submit">submit</button>
-            </form>
-        </div>
+      <div class="signinFormArea flex">
+        <img id="logo" src="./img/Wallet.png" alt="" srcset="" />
+        <form class="signinForm">
+          <h1>Sign in</h1>
+          <input class="signinEmail" type="text" placeholder="Enter Email" />
+          <input
+            class="signinPassword"
+            type="password"
+            placeholder="Enter Password"
+          />
+          <button type="submit">submit</button>
+          <button class="googleSignup" type="button">
+            Sign in with google
+          </button>
+        </form>
+      </div>
+      <div class="signupFormArea flex">
+        <form class="signupForm">
+          <h1>Sign Up</h1>
+          <input
+            class="signupFullName"
+            type="text"
+            placeholder="Enter Full Name"
+          />
+          <input class="signupEmail" type="text" placeholder="Enter Email" />
+          <input
+            class="signupPassword"
+            type="password"
+            placeholder="Enter Password"
+          />
+          <button type="submit">submit</button>
+        </form>
+      </div>
     </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use -->
-<script  src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
-<script  src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAyCf5dPSngiJEv-LWbeneh2LsikY55tV4",
-    authDomain: "wallet-tracker-js-55711.firebaseapp.com",
-    databaseURL: "https://wallet-tracker-js-55711.firebaseio.com",
-    projectId: "wallet-tracker-js-55711",
-    storageBucket: "wallet-tracker-js-55711.appspot.com",
-    messagingSenderId: "223016431081",
-    appId: "1:223016431081:web:6dda06f40936b43a54af78"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAyCf5dPSngiJEv-LWbeneh2LsikY55tV4",
+        authDomain: "wallet-tracker-js-55711.firebaseapp.com",
+        databaseURL: "https://wallet-tracker-js-55711.firebaseio.com",
+        projectId: "wallet-tracker-js-55711",
+        storageBucket: "wallet-tracker-js-55711.appspot.com",
+        messagingSenderId: "223016431081",
+        appId: "1:223016431081:web:6dda06f40936b43a54af78",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
     <script src="./js/index.js"></script>
-</body>
+  </body>
 </html>
